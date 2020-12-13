@@ -41,5 +41,5 @@ biden_df["tag_trump"] = np.zeros(len(biden_df), dtype=np.int)
 biden_df = biden_df.drop(['tweet', 'user_description'], axis=1)
 res_df.append(remove_duplicate(biden_df, has))
 
-res_df.to_csv("out.csv", index=False)
+res_df.to_csv("election_twitter_data.csv", index=False)
 # biden_df = pd.read_csv('pycode\hashtag_joebiden.csv',lineterminator='\n')
