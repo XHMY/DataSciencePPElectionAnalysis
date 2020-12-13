@@ -7,7 +7,7 @@ def remove_duplicate(df, has):
     cnt = 0
     widgets = ['Progress: ', Percentage(), ' ', Bar('#'), ' ', Timer(),
                ' ', ETA(), ' ', FileTransferSpeed()]
-    pbar = ProgressBar(widgets=widgets, maxval=len(trump_df)).start()
+    pbar = ProgressBar(widgets=widgets, maxval=len(df)).start()
     res_df = df[0:1]
     has.add(df[0:1]["created_at"].values[0])
     for i in df.index:
@@ -35,7 +35,7 @@ del trump_df
 
 biden_df = pd.read_csv('Data/hashtag_joebiden.csv', lineterminator='\n')
 print("Read Trump Data Complete!")
-print("Start Processing Trump Data...")
+print("Start Processing Biden Data...")
 biden_df["tag_biden"] = np.ones(len(biden_df), dtype=np.int)
 biden_df["tag_trump"] = np.zeros(len(biden_df), dtype=np.int)
 biden_df = biden_df.drop(['tweet', 'user_description'], axis=1)
