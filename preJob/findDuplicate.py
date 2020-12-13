@@ -6,7 +6,7 @@ import numpy as np
 def remove_duplicate(df, has):
     cnt = 0
     widgets = ['Progress: ', Percentage(), ' ', Bar('#'), ' ', Timer(),
-               ' ', ETA(), ' ', FileTransferSpeed()]
+               ' ', ETA()]
     pbar = ProgressBar(widgets=widgets, maxval=len(df)).start()
     res_df = df[0:1]
     has.add(df[0:1]["created_at"].values[0])
